@@ -1,4 +1,4 @@
-import { FileDown, Filter, MoreHorizontal, Plus, Search } from "lucide-react"
+import { FileDown, Filter, MoreHorizontal,  Search } from "lucide-react"
 import { Header } from "./components/header"
 import { Tabs } from "./components/tabs"
 import { Button } from "./components/ui/button"
@@ -7,8 +7,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { Pagination } from "./components/pagination"
 import { keepPreviousData, useQuery } from "@tanstack/react-query"
 import { useSearchParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-import useDebounceValue from "./hooks/use-debounce-value"
+import { useState } from "react"
+//import useDebounceValue from "./hooks/use-debounce-value"
 export interface TagResponse{
   first: number
   prev: number | null
@@ -26,11 +26,11 @@ export interface Tag {
 function App() {
   const [searchParams, setSearchParams] = useSearchParams()
   const [filter, setFilter] = useState('')
-  const debouncedFilter = useDebounceValue(filter, 1000)//fara a busca 1 segundo após digitar
+  //const debouncedFilter = useDebounceValue(filter, 1000)//fara a busca 1 segundo após digitar
 
 
   const page = searchParams.get('page') ? Number(searchParams.get('page')): 1
- const urlFilter = searchParams.get('filter') ?? ''
+  const urlFilter = searchParams.get('filter') ?? ''
   /*
   useEffect(()=> {
     setSearchParams(params => {
