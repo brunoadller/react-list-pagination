@@ -51,7 +51,7 @@ import {
   
     function lastPage() {
       setSearchParams(params => {
-        params.set('page', String(page))
+        params.set('page', String(pages))
 
         return params
      })
